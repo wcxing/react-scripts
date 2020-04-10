@@ -91,33 +91,10 @@ module.exports = function(
   const appPackage = require(path.join(appPath, 'package.json'));
   const useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'));
 
-  if (!templateName) {
-    console.log('');
-    console.error(
-      `A template was not provided. This is likely because you're using an outdated version of ${chalk.cyan(
-        'create-react-app'
-      )}.`
-    );
-    console.error(
-      `Please note that global installs of ${chalk.cyan(
-        'create-react-app'
-      )} are no longer supported.`
-    );
-    return;
-  }
+  // use our own template
+  const templatePath = path.join(__dirname, '..', 'my-template');
 
-  const templatePath = path.join(
-    require.resolve(templateName, { paths: [appPath] }),
-    '..'
-  );
-
-  let templateJsonPath;
-  if (templateName) {
-    templateJsonPath = path.join(templatePath, 'template.json');
-  } else {
-    // TODO: Remove support for this in v4.
-    templateJsonPath = path.join(appPath, '.template.dependencies.json');
-  }
+  const templateJsonPath = path.join(templatePath, 'template.json');
 
   let templateJson = {};
   if (fs.existsSync(templateJsonPath)) {
@@ -302,7 +279,7 @@ module.exports = function(
   }
 
   // Install template dependencies, and react and react-dom if missing.
-  if ((!isReactInstalled(appPackage) || templateName) && args.length > 1) {
+  if ((!isReactInstalled(appPackage)) && args.length > 1) {
     console.log();
     console.log(`Installing template dependencies using ${command}...`);
 
@@ -318,7 +295,7 @@ module.exports = function(
     verifyTypeScriptSetup();
   }
 
-  // Remove template
+  // Remove defult template
   console.log(`Removing template package using ${command}...`);
   console.log();
 
