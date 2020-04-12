@@ -1,4 +1,12 @@
 rules:
-    react/react-in-jsx-scope: 0 
-parserOptions: 
+    react/react-in-jsx-scope: 0,
+    no-console: 1,
+    no-undefined: 2,
+    quotes: [2, single],
+    indent:
+        - 2
+        - 4
+        -
+          SwitchCase: 1
+parserOptions:
     ecmaVersion: 6
