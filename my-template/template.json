@@ -4,7 +4,11 @@
       "@testing-library/react": "^9.3.2",
       "@testing-library/jest-dom": "^4.2.4",
       "@testing-library/user-event": "^7.1.2",
-      "react-hot-loader": "^4.12.20"
+      "react-hot-loader": "^4.12.20",
+      "react-router-dom": "^5.1.2",
+      "redux": "^4.0.5",
+      "redux-actions": "^2.6.5",
+      "react-redux": "^7.2.0"
     }
   }
 }
