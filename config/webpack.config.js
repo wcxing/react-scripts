@@ -405,6 +405,7 @@ module.exports = function(webpackEnv) {
                     'babel-preset-react-app',
                     'react-dev-utils',
                     'react-scripts',
+                    'babel-plugin-react-require',
                   ]
                 ),
                 // @remove-on-eject-end
@@ -420,6 +421,7 @@ module.exports = function(webpackEnv) {
                       },
                     },
                   ],
+                  require.resolve('babel-plugin-react-require'),
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
