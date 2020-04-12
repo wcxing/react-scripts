@@ -1,0 +1,16 @@
+{
+  "id": "1512350",
+  "name": "skindemo",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "skindemo",
+  "glyphs": [
+    {
+      "icon_id": "11880664",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    }
+  ]
+}

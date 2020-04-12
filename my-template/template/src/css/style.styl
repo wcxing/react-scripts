@@ -1,0 +1,43 @@
+vertical-middle() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+rolling(time) {
+    animation: rolling time linear infinite;
+}
+
+fill() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+text-ellipsis(width) {
+    display: inline-block;
+    max-width: width;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@keyframes rolling {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
