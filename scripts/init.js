@@ -282,7 +282,7 @@ module.exports = function(
   }
 
   // Install template dependencies, and react and react-dom if missing.
-  if ((!isReactInstalled(appPackage)) && args.length > 1) {
+  if (args.length > 1) {
     console.log();
     console.log(`Installing template dependencies using ${command}...`);
 
@@ -296,18 +296,6 @@ module.exports = function(
   if (args.find(arg => arg.includes('typescript'))) {
     console.log();
     verifyTypeScriptSetup();
-  }
-
-  // Remove defult template
-  console.log(`Removing template package using ${command}...`);
-  console.log();
-
-  const proc = spawn.sync(command, [remove, templateName], {
-    stdio: 'inherit',
-  });
-  if (proc.status !== 0) {
-    console.error(`\`${command} ${args.join(' ')}\` failed`);
-    return;
   }
 
   // Create git commit if git repo was initialized

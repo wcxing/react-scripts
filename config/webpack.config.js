@@ -325,6 +325,10 @@ module.exports = function(webpackEnv) {
       ],
     },
     resolveLoader: {
+      // 解析loader包含本react-scripts的node_modules，用来解决html内联模板报错“can not resolve babel-loader”
+      modules: ['node_modules', paths.appNodeModules, path.resolve(__dirname, '../node_modules')].concat(
+        modules.additionalModulePaths || []
+      ),
       plugins: [
         // Also related to Plug'n'Play, but this time it tells webpack to load its loaders
         // from the current package.

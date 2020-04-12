@@ -1,6 +1,6 @@
 {
   "name": "react-scripts",
-  "version": "3.4.1",
+  "version": "3.4.1-alpha",
   "description": "Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
     "scripts",
     "template",
     "template-typescript",
-    "utils"
+    "utils",
+    "my-template"
   ],
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
