@@ -1,8 +1,8 @@
 rules:
-    react/react-in-jsx-scope: 0,
-    no-console: 1,
-    no-undefined: 2,
-    quotes: [2, single],
+    react/react-in-jsx-scope: 0
+    no-console: 1
+    no-undefined: 2
+    quotes: [2, single]
     indent:
         - 2
         - 4
