@@ -308,6 +308,9 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '~': path.resolve(paths.appSrc),
+        '@': path.resolve(paths.appSrc),
+        css: path.resolve(path.join(paths.appSrc, 'css')),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
