@@ -144,7 +144,10 @@ module.exports = function(
   });
 
   // Copy over some of the devDependencies
-  appPackage.dependencies = appPackage.dependencies || {};
+  appPackage.dependencies = Object.assign(
+    require(templateJsonPath).package.dependencies,
+    appPackage.dependencies || {}
+  );
 
   // Setup the script rules
   // TODO: deprecate 'scripts' key directly on templateJson

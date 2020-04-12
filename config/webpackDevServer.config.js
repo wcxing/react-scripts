@@ -16,6 +16,8 @@ const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const redirectServedPath = require('react-dev-utils/redirectServedPathMiddleware');
 const paths = require('./paths');
 const getHttpsConfig = require('./getHttpsConfig');
+const path = require('path');
+const apiMocker = require('mocker-api');
 
 const host = process.env.HOST || '0.0.0.0';
 const sockHost = process.env.WDS_SOCKET_HOST;
@@ -133,6 +135,13 @@ module.exports = function(proxy, allowedHost) {
       // it used the same host and port.
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
+
+      apiMocker(app, require.resolve(path.join(paths.appPath, './mock')), {
+        // 代理接口
+        // proxy: {
+          // '/proxy-api/*': 'http://www.domain.com/path/to/api'
+        // }
+      });
     },
   };
 };
